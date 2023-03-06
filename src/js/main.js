@@ -3,15 +3,16 @@ fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vQlBwUvFAaHZIF_qkWGa-1chr
   .then(response => response.text())
   .then(data => {
     const flashcards = parseCSV(data);
-    const container = document.getElementById("flashcards-container");
+    const shuffledFlashcards = shuffleArray(flashcards); // Shuffle the flashcards
+    const container = document.getElementById("flashcards__container");
     // Dynamically create HTML elements for each flashcard
-    flashcards.forEach(flashcard => {
+    shuffledFlashcards.forEach(flashcard => {
       const card = document.createElement("div");
-      card.classList.add("flashcard", "question");
+      card.classList.add("flashcards__card");
       card.innerHTML = `
-      <div class="text question">${flashcard.question}</div>
-      <div class="text answer">${flashcard.answer !== undefined ? flashcard.answer : ''}</div>
-    `;
+        <div class="flashcards__card--question">${flashcard.question}</div>
+        <div class="flashcards__card--answer">${flashcard.answer !== undefined ? flashcard.answer : ''}</div>
+      `;
       card.addEventListener("click", () => {
         card.classList.toggle("flipped");
       });
@@ -31,4 +32,13 @@ function parseCSV(data) {
     });
     return obj;
   });
+}
+
+// Shuffle the items in an array randomly
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
 }

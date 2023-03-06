@@ -12,6 +12,10 @@ const paths = {
   styles: {
     src: 'src/less/style.less',
     dest: 'dist/css/'
+  },
+  script: {
+    src: 'src/js/*.js',
+    dest: 'dist/js/'
   }
 };
 
@@ -29,10 +33,10 @@ function compileStyles() {
 
 // Minifiy and uglify JS
 function minifyJS() {
-    return gulp.src('src/*.js')
+    return gulp.src(paths.script.src)
       .pipe(uglify({mangle: true}))
       .pipe(rename({suffix: '.min'}))
-      .pipe(gulp.dest('dist'));
+      .pipe(gulp.dest(paths.script.dest));
   }
   
 

@@ -63,5 +63,11 @@ Open the index.html to view the web app.
 ## JavaScript file notes:
 In summary, this code fetches data from a Google Sheet in CSV format, parses the CSV data into an array of objects representing flashcards, and then dynamically creates HTML elements for each flashcard using JavaScript. The parseCSV() function is used to convert the CSV data into an array of objects, and the fetch() API is used to retrieve the data from the Google Sheet. Finally, event listeners are added to each flashcard element to allow them to be flipped over when clicked.
 
+In this updated code, we've added a new shuffleArray function that randomly shuffles the items in the flashcards array.
+
+We then call this function to create a new shuffledFlashcards array, which we use in the forEach loop to create the HTML elements.
+
+With this change, the flashcards will be displayed in a random order each time the page is loaded.
+
 ## Contributing
 Contributions to this project are welcome. If you encounter any issues or have suggestions for improvements, please submit a pull request or open an issue on the project's GitHub page.
