@@ -79,4 +79,4 @@ Contributions to this project are welcome. If you encounter any issues or have s
 ---
 
 ## Reference
-- Good flashcard animation: https://codepen.io/dennythecoder/pen/OZRjaJ
+- Good flashcard animation: https://codepen.io/dennythecoder/pen/OZRjaJ# Flashcard-Study-App
