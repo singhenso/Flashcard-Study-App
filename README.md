@@ -1,3 +1,5 @@
+![Screenshot of Flashcard App](dist/img/screenshot.jpg)
+
 # Flashcard App
 This is a practice project to build a flashcard app designed to help users memorize specific programming knowledge concepts. The app is meant to act as a tool to assist users in retaining and recalling important information over time.
 
