@@ -18,6 +18,26 @@ fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vQlBwUvFAaHZIF_qkWGa-1chr
       });
       container.appendChild(card);
     });
+    /*
+    The regular expression /(".*?"|[^",]+)(?=\s*,|\s*$)/g matches either a sequence of characters enclosed in double quotes, or a sequence of characters that do not contain commas, followed by either a comma or the end of the line. The g flag at the end of the expression makes it global, so it will match all occurrences within the string.
+    With this updated function, any commas within double quotes will be preserved, and not treated as delimiters.
+    */
+    function parseCSV(data) {
+      const lines = data.split("\n");
+      const headers = lines[0].split(",");
+    
+      return lines.slice(1).map(line => {
+        const values = line.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g);
+        const obj = {};
+    
+        headers.forEach((header, index) => {
+          obj[header.trim()] = values[index].trim();
+        });
+    
+        return obj;
+      });
+    }
+    
   });
 
 // Parse CSV data into an array of objects

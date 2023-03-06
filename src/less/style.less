@@ -11,6 +11,7 @@
   box-sizing: border-box;
   color: inherit;
   background-color: transparent;
+  line-height: 1.2;
 
   &:before,
   &:after {
@@ -37,6 +38,23 @@ h1,h2,h3,h4,h5,h6 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 700; /* bold */
   }
+  /* Block: Nav */
+.navbar {
+    background-color: #000;
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
 /* Block: Flashcards */
 #flashcards-container {
 }
@@ -48,6 +66,8 @@ h1,h2,h3,h4,h5,h6 {
   justify-content: center;
   gap: 1rem;
   margin-top: 1rem;
+  max-width: 1200px;
+  padding: 0 20px;
 }
 
 /* Element: Card */
