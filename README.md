@@ -60,6 +60,8 @@ That's it! You can now use these packages in your Gulpfile to automate your buil
 
 Open the index.html to view the web app.
 
+---
+
 ## JavaScript file notes:
 In summary, this code fetches data from a Google Sheet in CSV format, parses the CSV data into an array of objects representing flashcards, and then dynamically creates HTML elements for each flashcard using JavaScript. The parseCSV() function is used to convert the CSV data into an array of objects, and the fetch() API is used to retrieve the data from the Google Sheet. Finally, event listeners are added to each flashcard element to allow them to be flipped over when clicked.
 
@@ -69,5 +71,12 @@ We then call this function to create a new shuffledFlashcards array, which we us
 
 With this change, the flashcards will be displayed in a random order each time the page is loaded.
 
+---
+
 ## Contributing
 Contributions to this project are welcome. If you encounter any issues or have suggestions for improvements, please submit a pull request or open an issue on the project's GitHub page.
+
+---
+
+## Reference
+- Good flashcard animation: https://codepen.io/dennythecoder/pen/OZRjaJ

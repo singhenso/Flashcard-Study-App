@@ -30,8 +30,13 @@ body {
   line-height: 1.5;
   color: #333;
   background-color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400; /* normal */
 }
-
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700; /* bold */
+  }
 /* Block: Flashcards */
 #flashcards-container {
 }
@@ -60,6 +65,7 @@ body {
   text-align: center;
 
   &--question {
+    font-weight: bold;
   }
   &--answer {
     transform: rotateY(180deg);
