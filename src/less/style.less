@@ -32,4 +32,50 @@
     background-color: #fff;
   }
   
-  
+  // flashcards
+  .flashcard {
+  &__text {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  &--question {
+    width: 300px;
+    height: 200px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+
+    &::before {
+      content: "Question:";
+    }
+
+    &.flipped {
+      & .flashcard__text--question {
+        display: none;
+      }
+
+      & .flashcard__text--answer {
+        display: block;
+      }
+    }
+  }
+
+  &--answer {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    transform: rotateY(180deg);
+
+    &::before {
+      content: "Answer:";
+    }
+  }
+}

@@ -27,11 +27,6 @@ function compileStyles() {
     .pipe(gulp.dest(paths.styles.dest));
 }
 
-// Watch for changes to Less files
-function watch() {
-  gulp.watch('src/less/**/*.less', compileStyles);
-}
-
 // Minifiy and uglify JS
 function minifyJS() {
     return gulp.src('src/*.js')
@@ -40,6 +35,13 @@ function minifyJS() {
       .pipe(gulp.dest('dist'));
   }
   
+
+// Watch for changes to Less files
+function watch() {
+  gulp.watch('src/less/**/*.less', compileStyles);
+  gulp.watch('src/js/**/*.js', minifyJS);
+}
+
 
 // Export tasks
 exports.watch = watch;
